@@ -27,7 +27,6 @@ const End = (props) => {
           <a href="https://morza95.github.io">
             App-Version 2 starten
           </a>
-          <button type="submit">Zurück auf Anfang</button>
         </div>
       </form>
     </div>
