@@ -1,10 +1,9 @@
 import React from "react";
 import "../Style.css";
-import Logo from "./Logo.js";
 
 const End = (props) => {
-  // Button Click Handler einfügen
 
+  // Auskommentiert ist die alternative Weiterleitung zur zweiten App anstelle der Weiterleitung zur Umfrage
   return (
     <div>
       <form>
@@ -14,7 +13,7 @@ const End = (props) => {
             <p>
               <br></br>Vielen Dank für die Teilnahme!{" "}
             </p>
-            {/* <p>Klicken Sie jetzt bitte auf den Button, um zur Umfrage zu gelangen</p> */}
+            {/* <p>Klicken Sie jetzt bitte auf den Button, um zur zweiten App zu gelangen</p> */}
             <p>
               {" "}
               Klicken Sie jetzt bitte auf den Button, um zur Umfrage zu gelangen

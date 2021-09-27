@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import "../Style.css";
-import Logo from "./Logo.js";
 import SearchPage from "./SearchPage";
 
 const StartPage = (props) => {
-  // ClickHandler
+  
+  // useState
   const [hideStartForm, setStartFormHidden] = useState(false);
   const [callSearchPage, setCallSearchPage] = useState(false);
   const [hideIntroSentences, setHideIntroSentences] = useState(false);
 
+  // ClickHandler 
   const continueClickedHandler = () => {
     setCallSearchPage(true);
     setHideIntroSentences(true);
   };
-
+  
   return (
-    //Import von classes Styling - dem css Modul
     <div>
       {hideStartForm ? null : (
         <form>
@@ -70,11 +70,6 @@ const StartPage = (props) => {
           Weiter
         </button>
       )}
-      {/* {clicked ? ( <SearchPage /> ) : (
-            <button className='button' onClick={()=> {continueClickedHandler(); setHideStartDisplay(true);  }} type="submit">
-              Weiter
-            </button>)
-          } */}
     </div>
   );
 };

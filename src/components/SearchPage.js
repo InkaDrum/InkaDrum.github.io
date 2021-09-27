@@ -1,10 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import ErrorModal from "./ErrorHandler/ErrorModal.js";
 import "../Style.css";
-import Verbindungsanzeige from "./ConnectionDisplay.js";
-import StartPage from "./StartPage.js";
 import { BsArrowLeftRight } from "react-icons/bs";
-import ConnectionDisplay from "./ConnectionDisplay.js";
 import ConnectionSelect from "./ConnectionSelect.js";
 
 const SearchPage = (props) => {
@@ -19,17 +16,18 @@ const SearchPage = (props) => {
   const [hideSearchFields, setHideSearchFields] = useState(false);
   const departureInputRef = useRef();
   const destinationInputRef = useRef();
-  // const [loadingMessage, setloadingMessage] = useState(true);
 
+  // Error Variable
   let errorOccured = false;
 
+  // Click Handler
   const backClickHandler = () => {
     props.onGoBack();
   };
 
   const departureChangeHandler = (event) => {
     setDepartureStop(event.target.value);
-    //const enteredDeparture = departureInputRef.current.value;
+
   };
 
   //////// Fehlerprüfung - Prevent////////////////
@@ -43,14 +41,14 @@ const SearchPage = (props) => {
         title: "Falsche Daten",
         message: "Bitte geben Sie einen passenden Start- und Zielort ein!",
       });
-      return (errorOccured = true); // nur zum Bearbeiten der Datums/zeitproleme: zurücksetzen!
+      return (errorOccured = true); 
     }
     if (departureTime === "" || departureDay === "") {
       setError({
         title: "Falsche Daten",
         message: "Bitte geben Sie einen Abfahrtstag und eine Abfahrtszeit an!",
       });
-      return (errorOccured = true); // nur zum Bearbeiten der Datums/zeitproleme: zurücksetzen!
+      return (errorOccured = true); 
     }
     if (departureStop === destinationStop) {
       setError({
@@ -67,24 +65,12 @@ const SearchPage = (props) => {
     setError(false);
   };
 
-  // errorPrevent();
-  // console.log(Error);
-  // //{Error? setSearchClicked(false) : setSearchClicked(true)}
-  // if (Error) {
-  //   return setSearchClicked(true) && console.log("weiter gehts");
-  // }
-  // return setSearchClicked(false) && console.log("Fehler Aufgetreten");
 
   ////// Handler ///////
 
   const searchClickedHandler = () => {
     setSearchClicked(true);
   };
-
-  // In "Update" von Kai funktioniert es noch
-
-  // let departure [] = {departurevalue = departureInputRef.current.value }
-  // let destination [] = { destinationvalue = destinationInputRef}
 
   const changeStopHandler = () => {
     let a = departureInputRef.current.value;
@@ -94,11 +80,9 @@ const SearchPage = (props) => {
 
   const destinationStopHandler = (event) => {
     setDestinationStop(event.target.value);
-    // const enteredDestinationStop = destinationInputRef.current.value;
   };
   const departureDayHandler = (event) => {
     setDepartureDay(event.target.value);
-    //localStorage.setItem()
   };
   const departureTimeHandler = (event) => {
     setDepartureTime(event.target.value);
@@ -135,7 +119,6 @@ const SearchPage = (props) => {
               ref={departureInputRef}
             />
             <button className="button-swap" onClick={changeStopHandler}>
-              {/* {" "} */}
               <BsArrowLeftRight size="3rem" />
             </button>
             <input
